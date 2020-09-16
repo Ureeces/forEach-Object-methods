@@ -16,6 +16,14 @@ const obj = {
     age: 21,
   },
 };
+
+let objEntries = Object.entries(obj);
+objEntries
+
+objEntries.forEach((user) => {
+  console.log(`${user[0]} is called ${user[1].name} and is ${user[1].age} years old.`);
+});
+
 // Use Object Methods
 //Create an albphabeticl list of every folder in the documents object (the keys are the folders)
 //Create a list of every file in the documents object. one list.
