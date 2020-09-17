@@ -65,14 +65,24 @@ const compareBooks = function(book1, book2) {
   const book1Values = Object.values(book1);
   const book2Values = Object.values(book2);
 
+  const book1Keys = Object.keys(book1);
+  const book2Keys = Object.keys(book2);
+
+  if(book1Keys.length !== book2Keys.length) {
+    return false;
+  }
+
   return book1Values.reduce((isSame, book1property, index) => {
     if(book1property !== book2Values[index]) {
+      isSame = false;
+    }
+    
+    if(book1Keys[index] !== book2Keys[index]) {
       isSame = false;
     }
 
     return isSame;
   }, true);
-
 }
 
 console.log(compareBooks(book1, book2));
